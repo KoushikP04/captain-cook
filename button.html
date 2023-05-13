@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Checkboxes</title>
+    <script src="nav.js"></script>
+   	<link rel = "stylesheet" href="Styles/cooks.css">   
+</head>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<body>
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<nav id="navbar" class="">
+  <div class="nav-wrapper">
+    <!-- Navbar Logo -->
+    <div class="logo">
+      <!-- Logo Placeholder for Inlustration -->
+      <a href="#home"><i class="fa fa-angellist"></i> Logo</a>
+    </div>
+
+    <!-- Navbar Links -->
+    <ul id="menu">
+      <li><a href="#home">Home</a></li><!--
+   --><li><a href="#services">Services</a></li><!--
+   --><li><a href="#about">About</a></li><!--
+   --><li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Menu Icon -->
+<div class="menuIcon">
+  <span class="icon icon-bars"></span>
+  <span class="icon icon-bars overlay"></span>
+</div>
+
+
+<body>
+
+<!-- first dropdown --> 
+<div class="sidenav">
+   <button class="dropdown-btn">Dairy
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+  	<form name = "passdata" action="." method="post">
+	    <a href="#"><input type="checkbox" name="ingridents" value="butter">butter</a>
+	    <a href="#"><input type="checkbox" name="ingridents" value="milk">milk</a>
+	    <a href="#"><input type="checkbox" name="ingridents" value="cheese">cheese</a>
+	    <a href="#"><input type="checkbox" name="ingridents" value="yogurt">yogurt</a>
+	    <a href="#"><input type="checkbox" name="ingridents" value="ice cream">ice cream</a>
+	    <a href="#"><input type="checkbox" name="ingridents" value="frosting">frosting</a>
+	    <a href="#"><input type="checkbox" name="ingridents" value="egg">egg</a>
+	</form>
+  </div>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact">Search</a>
+</div>
+
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+<div class="sidenav">
+   <button class="dropdown-btn">Dairy
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#"><input type="checkbox" name="ingridents" value="butter">butter</a>
+    <a href="#"><input type="checkbox" name="ingridents" value="milk">milk</a>
+    <a href="#"><input type="checkbox" name="ingridents" value="cheese">cheese</a>
+    <a href="#"><input type="checkbox" name="ingridents" value="yogurt">yogurt</a>
+    <a href="#"><input type="checkbox" name="ingridents" value="ice cream">ice cream</a>
+    <a href="#"><input type="checkbox" name="ingridents" value="frosting">frosting</a>
+    <a href="#"><input type="checkbox" name="ingridents" value="egg">egg</a>
+  </div>
+
+   <button class="dropdown-btn">Vegetables
+    <i class="fa fa-caret-down"></i>
+   </button>
+  <div class = "dropdown-container"> 
+  <a href="#"><input type="checkbox" name="ingridents" value="onion"> onion</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="garlic"> garlic</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="tomato"> tomato</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="carrot"> carrot</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pepper"> pepper</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="basil"> basil</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="parsley"> parsley</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="mushroom"> mushroom</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="corn"> corn</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="broccoli"> broccoli</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="spinach"> spinach</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="bean"> bean</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="ginger"> ginger</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="celery"> celery</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="cucumber"> cucumber</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="zucchini"> zucchini</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="cilantro"> cilantro</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pickle"> pickle</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="avocado"> avocado</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="olive"> olive</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="eggplant"> eggplant</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="beet"> beet</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pumpkin"> pumpkin</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="kale"> kale</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="radish"> radish</a>
+</div> 
+
+ <button class="dropdown-btn">Fruits
+    <i class="fa fa-caret-down"></i>
+   </button>
+   <div class = "dropdown-container"> 
+  <a href="#"><input type="checkbox" name="ingridents" value="lemon"> lemon</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="banana"> banana</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="lime"> lime</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pineapple"> pineapple</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="orange"> orange</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="strawberry"> strawberry</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="blueberry"> blueberry</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="raisin"> raisin</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="coconut"> coconut</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="grape"> grape</a>
+ 	<a href="#"><input type="checkbox" name="ingridents" value="peach"> peach</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="raspberry"> raspberry</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="cranberry"> cranberry</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="mango"> mango</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pear"> pear</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="blackberry"> blackberry</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="kiwi"> kiwi</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pomegrante"> pomegranate</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="plantain"> plantain</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="fig"> fig</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="apple"> apple</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="lychee"> lychee</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="honeydew"> honeydew</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="watermelon"> watermelon</a>
+</div>
+
+<button class="dropdown-btn">Bread
+    <i class="fa fa-caret-down"></i>
+   </button>
+   <div class = "dropdown-container"> 
+  <a href="#"><input type="checkbox" name="ingridents" value="rice"> rice</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="pasta"> pasta</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="flour"> flour</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="baking powder"> baking powder</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="baking soda"> baking soda</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="cornstarch"> cornstarch</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="cocoa"> cocoa</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="tortilla"> tortilla</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="noodle"> noodle</a>
+ <a href="#"> 	<input type="checkbox" name="ingridents" value="rolled oat"> rolled oat</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="yeast"> yeast</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="cracker"> cracker</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="quinoa"> quinoa</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="popcorn"> popcorn</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="chip"> chip</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="macaroni"> macaroni</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="ramen"> ramen</a></a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="cereal"> cereal</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="crouton"> crouton</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="bread"> bread</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="pita"> pita</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="risotto"> risotto</a>
+ <a href="#">	<input type="checkbox" name="ingridents" value="pretzel"> pretzel</a>
+  </div>
+ 
+<button class="dropdown-btn">Meat
+    <i class="fa fa-caret-down"></i>
+   </button>
+   <div class = "dropdown-container"> 
+ <a href="#"><input type="checkbox" name="ingridents" value="bacon"> bacon</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="sausage"> sausage</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="beef"> beef</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="ham"> ham</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pork"> pork</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="chicken"> chicken</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="chorizo"> chorizo</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="spam"> spam</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="venison"> venison</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="lamb"> lamb</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pancetta"> pancetta</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="veal"> veal</a>
+ </div>
+<button class="dropdown-btn">Seafood
+    <i class="fa fa-caret-down"></i>
+   </button>
+   <div class = "dropdown-container"> 
+    <a href="#"><input type="checkbox" name="ingridents" value="shrimp"> shrimp</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="crab"> crab</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="prawn"> prawn</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="scallop"> scallop</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="clam"> clam</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="lobster"> lobster</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="mussel"> mussel</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="oyster"> oyster</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="octopus"> octopus</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="calamari"> calamari</a>
+</div>
+
+<button class="dropdown-btn">Legumes
+    <i class="fa fa-caret-down"></i>
+  </button>
+   <div class = "dropdown-container"> 
+	<a href="#"><input type="checkbox" name="ingridents" value="tofu"> tofu</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="bean"> bean</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="pea"> pea</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="chickpea"> pea</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="lentil"> lentil</a>
+	 <a href="#"><input type="checkbox" name="ingridents" value="hummus"> hummus</a>
+</div>
+
+
+<button class="dropdown-btn">Soup
+    <i class="fa fa-caret-down"></i>
+  </button>
+<div class = "dropdown-container"> 
+	<a href="#"><input type="checkbox" name="ingridents" value="chicken broth"> chicken broth</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="beef broth"> beef broth</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="vegetable stock"> vegetable stock</a>
+ 	<a href="#"><input type="checkbox" name="ingridents" value="lamb stock"> lamb stock</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="pork stock"> pork stock</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="water"> water</a>
+	<a href="#"><input type="checkbox" name="ingridents" value="worchestershire"> worchestershire</a>
+</div> 
+</div>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+
+<!--
+<div id = "list1" class = "dropdown-check-list" tabindex="100"> 
+	<span class = "anchor">Dairy</span>
+		<ul class = "items"> 
+			<li><input type="checkbox" name="ingridents" value="butter"> butter</li>
+			<li><input type="checkbox" name="ingridents" value="egg"> egg</li>
+			<li><input type="checkbox" name="ingridents" value="milk"> milk</li>
+			<li><input type="checkbox" name="ingridents" value="cheese"> cheese</li>
+			<li><input type="checkbox" name="ingridents" value="sour cream"> sour cream</li>
+			<li><input type="checkbox" name="ingridents" value="yogurt"> yogurt</li>
+			<li><input type="checkbox" name="ingridents" value="ice cream"> ice cream</li>
+			<li><input type="checkbox" name="ingridents" value="frosting"> frosting</li>
+		</ul>
+</div> 
+-->
+	    
+	<script src="button.js"></script>
+    
+</body>
+</html>
+
